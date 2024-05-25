@@ -11,3 +11,5 @@ img = PhotoImage(file='login.png')
 Label(root, image=img, bg='white').place(x=60, y=60)
 
 root.mainloop()
+
+#zmiana zmiana

@@ -13,7 +13,7 @@ def signin():
 
     if username == 'kurspython2024' and password == 'wsb':
         screen=Toplevel(root)
-        screen.title('WITAM CIĘ')
+        screen.title('WITAJ W PRZESTRZENI WU.STUDIO')
         screen.geometry('900x500+200+100')
         screen.config(bg='white')
         Label(screen, text='Witaj na oficjalnej stronie\nWU.STUDIO!',bg='#fff',fg='blue', font=('Bauhaus 93', 36)).pack(expand=True)
@@ -64,11 +64,11 @@ passw.bind('<FocusOut>', leave)
 Frame(frame, width=295, height=3, bg='tan').place(x=35,y=180)
 
 #------------login/sign up-----------
-Button(frame, width=40, pady=8, text='Wszystko gotowe. Zaloguj', bg='blue', fg='white', border=0, command=signin).place(x=40, y=200)
+Button(frame, width=40, pady=8, text='Wszystko gotowe. Zaloguj', bg='blue', fg='white', border=0, font=('72 Condensed',12), command=signin).place(x=40, y=200)
 label=Label(frame,text='Nie masz jeszcze konta?', fg='blue', bg='white', font=('72 Condensed',10))
 label.place(x=80, y=260)
 
-sign_up= Button(frame, width=14, text='kliknij i działamy!', border=0, bg='white', cursor='hand2', fg='tan')
+sign_up= Button(frame, width=15, text='kliknij i lecimy!', border=0, bg='white', cursor='hand2', fg='tan', font=('Bauhaus 93', 10))
 sign_up.place(x=200, y=260)
 
 root.mainloop()

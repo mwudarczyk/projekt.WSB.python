@@ -5,7 +5,7 @@ from PIL import Image, ImageTk
 
 window = Tk()
 window.title('Zakładanie nowego konta')
-window.geometry('400x700+300+50')
+window.geometry('400x600+300+50')
 window.configure(bg='linen')
 window.resizable(False, False)
 
@@ -17,10 +17,13 @@ label2 = Label(window, image=new_pic, bg='linen')
 label2.pack()
 
 #-------------logowanie-----------------
-frame = Frame(window, width=300, height=390, bg='linen')
+frame = Frame(window, width=300, height=600, bg='linen')
 frame.place(x=50, y=200)
 heading = Label(frame, text='Tworzenie nowego konta', fg='blue', bg='linen', font=('Bauhaus 93', 18))
 heading.place(x=20, y=1)
+
+description = Label(frame, text='Witam cię w mojej artystycznej strefie!\nBardzo mi miło, że mnie odwiedzasz :)\nNa tej stronie znajdziesz informacje o moich obrazach\noraz kilka słów ode mnie. Enjoy', fg='coral', bg='linen', font=('72 condensed', 10))
+description.place(x=20, y=300)
 
 #-------------Uzytkownik-----------------
 def enter(n):
@@ -69,5 +72,21 @@ passw2.insert(0, 'Powtórz hasło')
 passw2.bind('<FocusIn>', enter)
 passw2.bind('<FocusOut>', leave)
 Frame(frame, width=250, height= 2, bg='coral').place(x=30, y=190)
+
+#-------------adres email-----------------
+def enter(n):
+    mail.delete(0, 'end')
+
+def leave(n):
+    if mail.get() == '':
+        mail.insert(0, 'Podaj swój adres e-mail')
+
+
+mail = Entry(frame, width=30, fg='blue', border=0, bg='linen', font=('72 Condensed', 12))
+mail.place(x=30, y=230)
+mail.insert(0, 'Podaj swój adres e-mail')
+mail.bind('<FocusIn>', enter)
+mail.bind('<FocusOut>', leave)
+Frame(frame, width=250, height= 2, bg='coral').place(x=30, y=250)
 
 window.mainloop()

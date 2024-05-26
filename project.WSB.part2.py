@@ -9,6 +9,38 @@ window.geometry('400x600+300+50')
 window.configure(bg='linen')
 window.resizable(False, False)
 
+
+def signup():
+    username = user.get()
+    password = passw.get()
+    password2 = passw2.get()
+    mailbox = mail.get()
+    if password == password2:
+        try:
+            file=open('baza danych.txt', 'r+')
+            d = file.read()
+            r = ast.literal_eval(d)
+
+            dict2 = {username:password}
+            r.update(dict2)
+            file.truncate(0)
+            file.close()
+
+            file=open('baza danych.txt', 'w')
+            w = file.write(str(r))
+
+            messagebox.showinfo('ZACZYNAMY', 'Konto założone pomyślnie :)')
+
+        except:
+            file = open('baza danych.txt', 'w')
+            pp = str({'username': 'password'})
+            file.write(pp)
+            file.close()
+
+    else:
+        messagebox.showerror('BŁĄD', 'Hasła nie są zgodne. Spróbuj ponownie :(')
+
+
 #-------------grafika-----------------
 img2 = Image.open('5-kopia 3.png')
 resized_img2 = img2.resize((200, 200), Image.LANCZOS)
@@ -23,7 +55,7 @@ heading = Label(frame, text='Tworzenie nowego konta', fg='blue', bg='linen', fon
 heading.place(x=20, y=1)
 
 description = Label(frame, text='Witam cię w mojej artystycznej strefie!\nBardzo mi miło, że mnie odwiedzasz :)\nNa tej stronie znajdziesz informacje o moich obrazach\noraz kilka słów ode mnie. Enjoy', fg='coral', bg='linen', font=('72 condensed', 10))
-description.place(x=20, y=300)
+description.place(x=20, y=310)
 
 #-------------Uzytkownik-----------------
 def enter(n):
@@ -88,5 +120,8 @@ mail.insert(0, 'Podaj swój adres e-mail')
 mail.bind('<FocusIn>', enter)
 mail.bind('<FocusOut>', leave)
 Frame(frame, width=250, height= 2, bg='coral').place(x=30, y=250)
+
+#------------przyciski------------------
+Button(frame, width=20, pady=2, text='Zaczynamy!', bg='blue', fg='white', border=0, font=('Bauhaus 93', 10), command=signup).place(x=80, y=270)
 
 window.mainloop()

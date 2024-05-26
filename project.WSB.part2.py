@@ -122,6 +122,7 @@ mail.bind('<FocusOut>', leave)
 Frame(frame, width=250, height= 2, bg='coral').place(x=30, y=250)
 
 #------------przyciski------------------
-Button(frame, width=20, pady=2, text='Zaczynamy!', bg='blue', fg='white', border=0, font=('Bauhaus 93', 10), command=signup).place(x=80, y=270)
+Button(frame, width=20, pady=2, text='Zaczynamy!', bg='blue', fg='white', border=0, font=('Bauhaus 93', 10), command=signup).place(x=135, y=270)
+signin = Button(frame, width=15, text='Jednak mam konto', border=0, bg='linen', cursor='hand2', fg='blue', font=('72 Condensed', 8, 'bold'), command=sign).place(x= 35, y=270)
 
 window.mainloop()

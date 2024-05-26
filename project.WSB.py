@@ -5,7 +5,7 @@ root=Tk()
 root.title("Panel logowania/tworzenia konta")
 root.geometry("900x500+200+100")
 root.configure(bg='linen')
-root.resizable(False, True)
+root.resizable(False, False)
 
 def signin():
     username = user.get()

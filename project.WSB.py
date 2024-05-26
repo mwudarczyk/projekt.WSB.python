@@ -20,10 +20,10 @@ def signin():
         screen.mainloop()
         print('correct')
 
-img = PhotoImage(file='login.png')
-Label(root, image=img, bg='white').place(x=60, y=60)
+img = PhotoImage(file='5-kopia 3.png')
+Label(root, image=img, bg='white').place(x=10, y=0)
 
-frame=Frame(root, width=350, height=350, bg='white')
+frame=Frame(root, width=360, height=400, bg='white')
 frame.place(x=500, y=70)
 
 heading=Label(frame, text='Zaloguj do serwisu',fg='blue', bg='white', font=('Bauhaus 93',26))
@@ -44,7 +44,7 @@ user.place(x=40, y=85)
 user.insert(0, 'Nazwa użytkownika')
 user.bind('<FocusIn>', enter)
 user.bind('<FocusOut>', leave)
-Frame(frame, width=295, height=3, bg='tan').place(x=35,y=110)
+Frame(frame, width=295, height=2, bg='coral').place(x=35,y=110)
 
 #------------password----------------
 def enter(n):
@@ -61,15 +61,14 @@ passw.place(x=40, y=155)
 passw.insert(0, 'Hasło')
 passw.bind('<FocusIn>', enter)
 passw.bind('<FocusOut>', leave)
-Frame(frame, width=295, height=3, bg='tan').place(x=35,y=180)
+Frame(frame, width=295, height=2, bg='coral').place(x=35,y=180)
 
 #------------login/sign up-----------
 Button(frame, width=40, pady=8, text='Wszystko gotowe. Zaloguj', bg='blue', fg='white', border=0, font=('72 Condensed',12), command=signin).place(x=40, y=200)
 label=Label(frame,text='Nie masz jeszcze konta?', fg='blue', bg='white', font=('72 Condensed',10))
 label.place(x=80, y=260)
 
-sign_up= Button(frame, width=15, text='kliknij i lecimy!', border=0, bg='white', cursor='hand2', fg='tan', font=('Bauhaus 93', 10))
+sign_up= Button(frame, width=15, text='kliknij i lecimy!', border=0, bg='white', cursor='hand2', fg='coral', font=('Bauhaus 93', 10))
 sign_up.place(x=200, y=260)
 
 root.mainloop()
-

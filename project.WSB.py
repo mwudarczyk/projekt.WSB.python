@@ -18,7 +18,15 @@ def signin():
         screen.config(bg='white')
         Label(screen, text='Witaj na oficjalnej stronie\nWU.STUDIO!',bg='#fff',fg='blue', font=('Bauhaus 93', 36)).pack(expand=True)
         screen.mainloop()
-        print('correct')
+
+    elif username!= 'kurspython2024' and password != 'wsb':
+        messagebox.showerror('BŁĄD', 'Niestety wygląda na to, że wpisałeś błędną nazwę użytkownika oraz hasło')
+
+    elif username!= 'kurspython2024':
+        messagebox.showerror('BŁĄD', 'Niestety nazwa użytkownika jest niepoprawna')
+
+    elif passw!= 'wsb':
+        messagebox.showerror('BŁĄD', 'Niestety hasło jest niepoprawne')
 
 img = PhotoImage(file='5-kopia 3.png')
 Label(root, image=img, bg='white').place(x=10, y=0)

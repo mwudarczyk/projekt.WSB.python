@@ -16,7 +16,7 @@ def signin():
         screen.title('WITAJ W PRZESTRZENI WU.STUDIO')
         screen.geometry('900x500+200+100')
         screen.config(bg='white')
-        Label(screen, text='Witaj na oficjalnej stronie\nWU.STUDIO!',bg='#fff',fg='blue', font=('Bauhaus 93', 36)).pack(expand=True)
+        Label(screen, text='Witaj na oficjalnej stronie\nWU.STUDIO!',bg='#fff',fg='blue', font=('Bauhaus 93', 36)).pack(expand=False)
         screen.mainloop()
 
     elif username!= 'kurspython2024' and password != 'wsb':

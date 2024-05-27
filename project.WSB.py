@@ -1,5 +1,6 @@
 from tkinter import *
 from tkinter import messagebox
+import ast
 
 root=Tk()
 root.title("Panel logowania/tworzenia konta")
@@ -11,7 +12,15 @@ def signin():
     username = user.get()
     password = passw.get()
 
-    if username == 'kurspython2024' and password == 'wsb':
+    file=open('baza danych.txt', 'r')
+    d=file.read()
+    r=ast.literal_eval(d)
+    file.close()
+
+    #print(r.keys())
+    #print(r.values())
+
+    if username in r.keys() and password == r[username]:
         screen=Toplevel(root)
         screen.title('WITAJ W PRZESTRZENI WU.STUDIO')
         screen.geometry('900x500+200+100')
@@ -19,14 +28,11 @@ def signin():
         Label(screen, text='Witaj na oficjalnej stronie\nWU.STUDIO!',bg='linen',fg='blue', font=('Bauhaus 93', 36)).pack(expand=False)
         screen.mainloop()
 
-    elif username != 'kurspython2024' and password != 'wsb':
-        messagebox.showerror('BŁĄD', 'Niestety wygląda na to, że wpisałeś błędną nazwę użytkownika oraz hasło')
+    else:
+        messagebox.showerror('BŁĄD', 'Niepoprawna nazwa uzytkownika lub hasło')
 
-    elif username != 'kurspython2024':
-        messagebox.showerror('BŁĄD', 'Niestety nazwa użytkownika jest niepoprawna')
-
-    elif passw != 'wsb':
-        messagebox.showerror('BŁĄD', 'Niestety hasło jest niepoprawne')
+def signup_command():
+    window=Toplevel(root)
 
 
 img = PhotoImage(file='5-kopia 3.png')
@@ -40,6 +46,7 @@ heading.place(x=30, y=5)
 #------------username----------------
 def enter(n):
     user.delete(0, 'end')
+
 
 def leave(n):
     name=user.get()
@@ -76,7 +83,7 @@ Button(frame, width=40, pady=8, text='Wszystko gotowe. Zaloguj', bg='blue', fg='
 label=Label(frame,text='Nie masz jeszcze konta?', fg='blue', bg='linen', font=('72 Condensed',10))
 label.place(x=80, y=260)
 
-sign_up= Button(frame, width=15, text='kliknij i lecimy!', border=0, bg='linen', cursor='hand2', fg='coral', font=('Bauhaus 93', 10))
+sign_up= Button(frame, width=15, text='kliknij i lecimy!', border=0, bg='linen', cursor='hand2', fg='coral', font=('Bauhaus 93', 10), command=signup_command)
 sign_up.place(x=200, y=260)
 
 root.mainloop()

@@ -60,6 +60,7 @@ def signup_command():
                 w = file.write(str(r))
 
                 messagebox.showinfo('ZACZYNAMY', 'Konto założone pomyślnie :)')
+                window.destroy()
 
             except:
                 file = open('baza danych.txt', 'w')

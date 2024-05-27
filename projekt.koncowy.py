@@ -34,9 +34,9 @@ def signin():
         new_pic = ImageTk.PhotoImage(resized_img3)
         label3 = Label(screen, image=new_pic, bg='linen')
         label3.pack()
-        label3.place(x=100, y=120)
-        descriptionginger = Label(screen,text='G I N G E R\nto praca akrylowa, na podobraziu bawełnianym,\nzostała namalowana dla przyjaciół pod koniec roku 2023.\nFormat obrazu to 180x130 cm',fg='blue', bg='linen', font=('72 condensed', 10))
-        descriptionginger.place(x=70, y=425)
+        label3.place(x=60, y=120)
+        descriptionginger = Label(screen,text='G I N G E R\nto praca akrylowa, na podobraziu bawełnianym,\nzostała namalowana dla przyjaciół pod koniec roku 2023.\nFormat obrazu: 180x130 cm',fg='blue', bg='linen', font=('72 condensed', 9))
+        descriptionginger.place(x=40, y=425)
 
         # -----ULTRA png-----
         img4 = Image.open('ultra.png')
@@ -44,9 +44,9 @@ def signin():
         new_pic2 = ImageTk.PhotoImage(resized_img4)
         label4 = Label(screen, image=new_pic2, bg='linen')
         label4.pack()
-        label4.place(x=400, y=120)
-        descriptionultra = Label(screen,text='U L T R A\nObraz ten powstał na zamówienie prywatnego klienta.\nBędzie ozdabiał mieszkanie w Krakowie.\nFormat obrazu to 100x150 cm',fg='blue', bg='linen', font=('72 condensed', 10))
-        descriptionultra.place(x=370, y=425)
+        label4.place(x=345, y=120)
+        descriptionultra = Label(screen,text='U L T R A\nObraz ten powstał na zamówienie prywatnego klienta.\nBędzie ozdabiał mieszkanie w Krakowie.\nFormat obrazu: 100x150 cm',fg='blue', bg='linen', font=('72 condensed', 9))
+        descriptionultra.place(x=335, y=425)
 
         # -----PORTO png-----
         img5 = Image.open('porto.png')
@@ -54,9 +54,9 @@ def signin():
         new_pic3 = ImageTk.PhotoImage(resized_img5)
         label5 = Label(screen, image=new_pic3, bg='linen')
         label5.pack()
-        label5.place(x=600, y=120)
-        descriptionporto = Label(screen,text='P O R T O\nTa praca jest moim najnowszym obrazem.\nKlientom zależało na oddaniu Portugalskiego wina Porto.',fg='blue', bg='linen', font=('72 condensed', 10))
-        descriptionporto.place(x=500, y=425)
+        label5.place(x=620, y=120)
+        descriptionporto = Label(screen,text='P O R T O\nTa praca jest moim najnowszym obrazem.\nKlientom zależało na oddaniu Portugalskiego wina Porto.\nFormat obrazu: 150x150 cm',fg='blue', bg='linen', font=('72 condensed', 9))
+        descriptionporto.place(x=610, y=425)
 
         screen.mainloop()
 

@@ -1,6 +1,7 @@
 from tkinter import *
 from tkinter import messagebox
 import ast
+from PIL import Image, ImageTk
 
 root=Tk()
 root.title("Panel logowania/tworzenia konta")
@@ -25,7 +26,39 @@ def signin():
         screen.title('WITAJ W PRZESTRZENI WU.STUDIO')
         screen.geometry('900x500+200+100')
         screen.config(bg='linen')
+        screen.resizable(False, False)
         Label(screen, text='Witaj na oficjalnej stronie\nWU.STUDIO!',bg='linen',fg='blue', font=('Bauhaus 93', 36)).pack(expand=False)
+
+        #-----Ginger png-----
+        img3 = Image.open('ginger.png')
+        resized_img3 = img3.resize((220, 300), Image.LANCZOS)
+        new_pic = ImageTk.PhotoImage(resized_img3)
+        label3 = Label(screen, image=new_pic, bg='linen')
+        label3.pack()
+        label3.place(x=100, y=120)
+        descriptionginger = Label(screen,text='G I N G E R\nto praca akrylowa, na podobraziu bawełnianym,\nzostała namalowana dla przyjaciół pod koniec roku 2023.\nFormat obrazu to 180x130 cm',fg='blue', bg='linen', font=('72 condensed', 10))
+        descriptionginger.place(x=70, y=425)
+
+        # -----ULTRA png-----
+        img4 = Image.open('ultra.png')
+        resized_img4 = img4.resize((220, 300), Image.LANCZOS)
+        new_pic2 = ImageTk.PhotoImage(resized_img4)
+        label4 = Label(screen, image=new_pic2, bg='linen')
+        label4.pack()
+        label4.place(x=400, y=120)
+        descriptionultra = Label(screen,text='U L T R A\nObraz ten powstał na zamówienie prywatnego klienta.\nBędzie ozdabiał mieszkanie w Krakowie.\nFormat obrazu to 100x150 cm',fg='blue', bg='linen', font=('72 condensed', 10))
+        descriptionultra.place(x=370, y=425)
+
+        # -----PORTO png-----
+        img5 = Image.open('porto.png')
+        resized_img5 = img5.resize((220, 300), Image.LANCZOS)
+        new_pic3 = ImageTk.PhotoImage(resized_img5)
+        label5 = Label(screen, image=new_pic3, bg='linen')
+        label5.pack()
+        label5.place(x=600, y=120)
+        descriptionporto = Label(screen,text='P O R T O\nTa praca jest moim najnowszym obrazem.\nKlientom zależało na oddaniu Portugalskiego wina Porto.',fg='blue', bg='linen', font=('72 condensed', 10))
+        descriptionporto.place(x=500, y=425)
+
         screen.mainloop()
 
     else:

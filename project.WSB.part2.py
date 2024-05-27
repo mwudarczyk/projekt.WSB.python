@@ -14,7 +14,6 @@ def signup():
     username = user.get()
     password = passw.get()
     password2 = passw2.get()
-    mailbox = mail.get()
     if password == password2:
         try:
             file=open('baza danych.txt', 'r+')
@@ -39,6 +38,9 @@ def signup():
 
     else:
         messagebox.showerror('BŁĄD', 'Hasła nie są zgodne. Spróbuj ponownie :(')
+
+def sign():
+    window.destroy()
 
 
 #-------------grafika-----------------
